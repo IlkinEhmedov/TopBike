@@ -60,7 +60,7 @@ function Comment({ OpenCommentBox, handleOpenComment, id, product }) {
                         Authorization: token
                     },
                 });
-                await axios.post(`c/sendEmailForReply`, {
+                await axios.post(`https://top-bike-d358.vercel.app/sendEmailForReply`, {
                     text: replyText,
                     comment: comment,
                     product: product.title,
