@@ -29,7 +29,7 @@ function Wishlist({ pageLoading, setPageLoading }) {
     async function handleDelete(id) {
         try {
             setIsLoading(true)
-            await axios.delete(`https://topbikewebsite.onrender.com/users/${decoded._id}/deletewish`, {
+            await axios.delete(`https://top-bike-d358.vercel.app/users/${decoded._id}/deletewish`, {
                 data: {
                     productId: id
                 }

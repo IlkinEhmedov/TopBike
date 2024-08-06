@@ -12,7 +12,7 @@ function VerifyForm({ setIsVerifyFormOpen, userValues, setIsLoginOpen }) {
     const { fetchBasketData, fetchWishlistData, setUser, setToken } = useContext(userContext)
 
     const handleRegister = async (values) => {
-        const res = await axios.post('https://topbikewebsite.onrender.com/verifyEmail', {
+        const res = await axios.post('https://top-bike-d358.vercel.app/verifyEmail', {
             email: userValues.email,
             code: values.code
         })
@@ -20,7 +20,7 @@ function VerifyForm({ setIsVerifyFormOpen, userValues, setIsLoginOpen }) {
             return toast.error('Invalid verification code')
         }
         try {
-            const res = await axios.post('https://topbikewebsite.onrender.com/register', userValues)
+            const res = await axios.post('https://top-bike-d358.vercel.app/register', userValues)
             res.status === 200 && setToken(res.data)
             res.status === 200 && setCookie("token", res.data, "600h")
             const decoded = res.status === 200 && jwtDecode(res.data);

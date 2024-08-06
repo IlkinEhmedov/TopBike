@@ -39,7 +39,7 @@ function Stripe() {
             emailjs.send(serviceId, templateId, templateParams, publicKey).then(
                 toast.success('Paymant successfull')
             )
-            await axios.delete(`https://topbikewebsite.onrender.com/users/${user._id}/deleteAllBasket`)
+            await axios.delete(`https://top-bike-d358.vercel.app/users/${user._id}/deleteAllBasket`)
             fetchBasketData()
         } catch (error) {
             toast.error(error.message)
@@ -51,7 +51,7 @@ function Stripe() {
     const payNow = async token => {
         try {
             const response = await axios({
-                url: 'https://topbikewebsite.onrender.com/payment',
+                url: 'https://top-bike-d358.vercel.app/payment',
                 method: 'post',
                 data: {
                     amount: (totalPrice * 100),

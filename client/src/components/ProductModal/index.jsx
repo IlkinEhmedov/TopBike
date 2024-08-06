@@ -40,12 +40,12 @@ function Modal() {
 
 
     async function fetchData() {
-        const res = await axios.get('https://topbikewebsite.onrender.com/products')
+        const res = await axios.get('https://top-bike-d358.vercel.app/products')
         setData(res.data)
     }
 
     async function fetchAddedData() {
-        const res = await axios.get(`https://topbikewebsite.onrender.com/products/${id}`)
+        const res = await axios.get(`https://top-bike-d358.vercel.app/products/${id}`)
         setAddedData(res.data)
     }
 

@@ -27,7 +27,7 @@ function Login() {
     // LOGIN
     const handleLogin = async (values, resetForm) => {
         try {
-            const res = await axios.post('https://topbikewebsite.onrender.com/login', values)
+            const res = await axios.post('https://top-bike-d358.vercel.app/login', values)
             toast.success('Successfully Logined!')
             res.status === 200 && setToken(res.data)
             res.status === 200 && setCookie("token", res.data, "600h")
@@ -46,7 +46,7 @@ function Login() {
 
 
     async function handleSubmit(userValues, resetForm) {
-        const response = await axios.post('https://topbikewebsite.onrender.com/checkUser', {
+        const response = await axios.post('https://top-bike-d358.vercel.app/checkUser', {
             email: userValues.email
         })
         if (response.status === 200) {
@@ -60,7 +60,7 @@ function Login() {
 
     async function sendVerifyEmail(email, resetForm) {
         try {
-            const res = await axios.post('https://topbikewebsite.onrender.com/sendVerificationCode', {
+            const res = await axios.post('https://top-bike-d358.vercel.app/sendVerificationCode', {
                 email: email
             })
             if (res.status === 200) {

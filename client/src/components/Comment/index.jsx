@@ -53,14 +53,14 @@ function Comment({ OpenCommentBox, handleOpenComment, id, product }) {
         if (token) {
             try {
                 setIsLoading(true)
-                await axios.post(`https://topbikewebsite.onrender.com/comments/${commentId}/replyComment`, {
+                await axios.post(`https://top-bike-d358.vercel.app/comments/${commentId}/replyComment`, {
                     text: replyText,
                 }, {
                     headers: {
                         Authorization: token
                     },
                 });
-                await axios.post(`https://topbikewebsite.onrender.com/sendEmailForReply`, {
+                await axios.post(`c/sendEmailForReply`, {
                     text: replyText,
                     comment: comment,
                     product: product.title,
@@ -88,7 +88,7 @@ function Comment({ OpenCommentBox, handleOpenComment, id, product }) {
         if (token) {
             try {
                 setIsLoading(true)
-                await axios.delete(`https://topbikewebsite.onrender.com/comments/${id}/delete`, {
+                await axios.delete(`https://top-bike-d358.vercel.app/comments/${id}/delete`, {
                     headers: {
                         Authorization: token
                     },
@@ -112,7 +112,7 @@ function Comment({ OpenCommentBox, handleOpenComment, id, product }) {
         if (token) {
             try {
                 setIsLoading(true)
-                await axios.delete(`https://topbikewebsite.onrender.com/replies/${replyId}/delete`, {
+                await axios.delete(`https://top-bike-d358.vercel.app/replies/${replyId}/delete`, {
                     headers: {
                         Authorization: token
                     },
@@ -141,7 +141,7 @@ function Comment({ OpenCommentBox, handleOpenComment, id, product }) {
         if (token) {
             try {
                 setIsLoading(true)
-                await axios.post(`https://topbikewebsite.onrender.com/products/${id}/addComment`, {
+                await axios.post(`https://top-bike-d358.vercel.app/products/${id}/addComment`, {
                     text: text,
                 }, {
                     headers: {
@@ -188,7 +188,7 @@ function Comment({ OpenCommentBox, handleOpenComment, id, product }) {
         }
         try {
             setIsLoading(true)
-            const res = await axios.post(`https://topbikewebsite.onrender.com/comments/${id}/like`, {
+            const res = await axios.post(`https://top-bike-d358.vercel.app/comments/${id}/like`, {
                 userId: user._id,
             }, {
                 headers: {
@@ -207,7 +207,7 @@ function Comment({ OpenCommentBox, handleOpenComment, id, product }) {
         if (token) {
             try {
                 setIsLoading(true)
-                const res = await axios.post(`https://topbikewebsite.onrender.com/replies/${id}/like`, {
+                const res = await axios.post(`https://top-bike-d358.vercel.app/replies/${id}/like`, {
                     userId: user._id,
                     replyId: replyId,
                 }, {
@@ -233,7 +233,7 @@ function Comment({ OpenCommentBox, handleOpenComment, id, product }) {
 
 
     const fetchComment = async () => {
-        const res = await axios.get(`https://topbikewebsite.onrender.com/products/${id}/comments`)
+        const res = await axios.get(`https://top-bike-d358.vercel.app/products/${id}/comments`)
         setCommentsOfProduct(res.data)
     }
 

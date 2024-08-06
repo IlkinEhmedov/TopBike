@@ -10,7 +10,7 @@ function useFetchData(urlTitle) {
 
     async function fetchData() {
         try {
-            const res = await axios.get(`https://topbikewebsite.onrender.com/${urlTitle}`)
+            const res = await axios.get(`https://top-bike-d358.vercel.app/${urlTitle}`)
             setProduct(res.data)
         } catch (error) {
             toast.error(error.message)

@@ -33,7 +33,7 @@ function Basket() {
     async function handleDelete(id) {
         try {
             setIsLoading(true)
-            await axios.delete(`https://topbikewebsite.onrender.com/users/${user._id}/delete`, {
+            await axios.delete(`https://top-bike-d358.vercel.app/users/${user._id}/delete`, {
                 data: {
                     productId: id
                 }
@@ -50,7 +50,7 @@ function Basket() {
         try {
             if (type) {
                 setIsLoading(true)
-                await axios.post(`https://topbikewebsite.onrender.com/users/${user._id}/increaseCount`, {
+                await axios.post(`https://top-bike-d358.vercel.app/users/${user._id}/increaseCount`, {
                     productId: id
                 })
                 setIsLoading(false)
@@ -58,7 +58,7 @@ function Basket() {
                 await fetchBasketData()
             } else {
                 setIsLoading(true)
-                const res = await axios.post(`https://topbikewebsite.onrender.com/users/${user._id}/decreaseCount`, {
+                const res = await axios.post(`https://top-bike-d358.vercel.app/users/${user._id}/decreaseCount`, {
                     productId: id
                 })
                 setIsLoading(false)
