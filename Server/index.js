@@ -1,4 +1,4 @@
-import express, { json } from "express";
+    import express, { json } from "express";
 import { connect } from "mongoose";
 import cors from "cors";
 import navbarRouter from "./src/router/homeRouter/navbarRouter.js";

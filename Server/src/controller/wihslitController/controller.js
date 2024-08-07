@@ -5,7 +5,7 @@ export const addToWishlist = async (req, res) => {
         const userId = req.params.userId;
         const { productId } = req.body;
         const user = await User.findById(userId);
-        
+
         if (!user) {
             return res.status(404).send("User not found");
         }
@@ -54,7 +54,7 @@ export const deleteDataFromWishlist = async (req, res) => {
             res.status(404).send("User Not Found")
             return
         }
-        user.wishlist = user.wishlist.filter(item => !item.product._id.equals(productId));
+        user.wishlist = user.wishlist.filter(item => item.product._id.toString() !== productId);
         await user.save()
         res.status(200).send("Product Deleted")
 

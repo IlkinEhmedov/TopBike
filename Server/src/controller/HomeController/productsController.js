@@ -105,11 +105,10 @@ export async function getProductById(req, res) {
 // GET LATEST 8 PRODUCT 
 export async function latestProducts(req, res) {
     try {
-        const latestProducts = await Products.find({})
-            .sort({ createdAt: -1 })
+        const latestProducts = await Products.find({})                  
             .limit(8);
         res.status(200).send(latestProducts)
     } catch (error) {
-        res.status(500).send("error");
+        res.status(500).send(error.message);
     }
 }

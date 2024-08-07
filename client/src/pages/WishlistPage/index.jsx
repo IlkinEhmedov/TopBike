@@ -25,8 +25,10 @@ function Wishlist({ pageLoading, setPageLoading }) {
         }, 2000);
         setPageLoading(true)
     }, [])
+    console.log('decoded', decoded)
 
     async function handleDelete(id) {
+        console.log('id', id)
         try {
             setIsLoading(true)
             await axios.delete(`https://top-bike-d358.vercel.app/users/${decoded._id}/deletewish`, {
@@ -52,11 +54,11 @@ function Wishlist({ pageLoading, setPageLoading }) {
                     <Loading />
                 ) : (
                     <>
-                    <Helmet>
-                        <title>
-                        TopBike | Wishlist
-                        </title>
-                    </Helmet>
+                        <Helmet>
+                            <title>
+                                TopBike | Wishlist
+                            </title>
+                        </Helmet>
                         <section className='wishlist'>
                             {isLoading && basketOpen === false ? <div class="loader"></div> : null}
                             <WishlistHeader />
