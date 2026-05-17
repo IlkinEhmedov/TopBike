@@ -15,7 +15,7 @@ function ResetPasswordForm({ setIsResetFormOpen }) {
                 toast.error("Password and ConfirmPassowrd do not match");
                 return;
             }
-            const res = await axios.post('https://top-bike-d358.vercel.app/resetPassword', {
+            const res = await axios.post('http://localhost:7000/resetPassword', {
                 email: values.email,
                 password: values.password
             })

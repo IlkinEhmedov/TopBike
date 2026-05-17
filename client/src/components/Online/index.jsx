@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Online() {
   const calculateTimeLeft = () => {
     // Set the end date for the promotion (replace with your actual end date)
-    const promotionEndDate = new Date('2024-04-10T00:00:00Z');
+    const promotionEndDate = new Date('2026-12-10T00:00:00Z');
     const now = new Date();
 
     const difference = promotionEndDate - now;
@@ -64,7 +64,7 @@ function Online() {
         </div>
         <div className="onlyShopBtn">
           <button>
-            <Link style={{color:"white"}} to={'/shop'}>Shop Now</Link>
+            <Link style={{ color: "white" }} to={'/shop'}>Shop Now</Link>
           </button>
         </div>
       </div>

@@ -27,7 +27,7 @@ function Details({ pageLoading, setPageLoading }) {
 
     async function fetchData() {
         try {
-            const res = await axios.get(`https://top-bike-d358.vercel.app/products/${id}`);
+            const res = await axios.get(`http://localhost:7000/products/${id}`);
             setProduct(res.data);
         } catch (error) {
             return navigate('*')

@@ -31,7 +31,7 @@ function Wishlist({ pageLoading, setPageLoading }) {
         console.log('id', id)
         try {
             setIsLoading(true)
-            await axios.delete(`https://top-bike-d358.vercel.app/users/${decoded._id}/deletewish`, {
+            await axios.delete(`http://localhost:7000/users/${decoded._id}/deletewish`, {
                 data: {
                     productId: id
                 }

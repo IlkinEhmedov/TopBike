@@ -17,7 +17,7 @@ function Users() {
     const fetchUsers = async () => {
         try {
             setSpinner(true);
-            const res = await axios.get('https://top-bike-d358.vercel.app/users');
+            const res = await axios.get('http://localhost:7000/users');
             setSpinner(false);
             setUsers(res.data);
         } catch (error) {
@@ -28,7 +28,7 @@ function Users() {
     const deleteUser = async (id) => {
         try {
             setSpinner(true);
-            await axios.delete(`https://top-bike-d358.vercel.app/users/${id}`, {
+            await axios.delete(`http://localhost:7000/users/${id}`, {
                 headers: { Authorization: token }
             });
             setSpinner(false);

@@ -162,34 +162,34 @@ export const sendVerificationCode = async (req, res) => {
     const code = Math.floor(1000 + Math.random() * 9000);
     verificationCodes[email] = code;
 
-    const transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
-        service: "gmail",
-        port: 465,
-        secure: true,
-        auth: {
-            user: "ilkin656.u@gmail.com",
-            pass: "ttkn adpd nykx ryuf",
-        },
-    });
+    // const transporter = nodemailer.createTransport({
+    //     host: "smtp.gmail.com",
+    //     service: "gmail",
+    //     port: 465,
+    //     secure: true,
+    //     auth: {
+    //         user: "ilkin656.u@gmail.com",
+    //         pass: "ttkn adpd nykx ryuf",
+    //     },
+    // });
 
-    const mailOptions = {   
-        from: 'ilkin656.u@gmail.com',
-        to: email,
-        subject: 'Email Verification Code',
-        text: `Hello`,
-        html: `
-        <h1 style="color:orange;text-align:center;">TopBike Services</h1>
-        <b style="font-size:20px"> <span style="color:red">Warning!!</span> Do Not Share This  Code with Anyone!!!</b><br/>
-      <i style="font-size:16px">Your Email Verification Code is : <b style="color:red">${code}</b></i>
-      <p>Thanks for Registration &#x1F60A;</p>
-      <p>Good Luck &#x1F60A;</p>
-      `
-    };
+    // const mailOptions = {
+    //     from: 'ilkin656.u@gmail.com',
+    //     to: email,
+    //     subject: 'Email Verification Code',
+    //     text: `Hello`,
+    //     html: `
+    //     <h1 style="color:orange;text-align:center;">TopBike Services</h1>
+    //     <b style="font-size:20px"> <span style="color:red">Warning!!</span> Do Not Share This  Code with Anyone!!!</b><br/>
+    //   <i style="font-size:16px">Your Email Verification Code is : <b style="color:red">${code}</b></i>
+    //   <p>Thanks for Registration &#x1F60A;</p>
+    //   <p>Good Luck &#x1F60A;</p>
+    //   `
+    // };
 
     try {
-        await transporter.sendMail(mailOptions)
-        res.status(200).send("Email verification code sent");
+        // await transporter.sendMail(mailOptions)
+        res.status(200).json({ message: 'Verification code sent to email.', code: code });
     } catch (error) {
         res.status(500).json({ error: 'Failed to send verification code via email.' });
     }

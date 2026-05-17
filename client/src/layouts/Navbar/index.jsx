@@ -45,7 +45,7 @@ function Navbar() {
       formData.append('image', file);
 
       try {
-        const res = await axios.post(`https://top-bike-d358.vercel.app/user/${user._id}/addProfileImage`, formData, {
+        const res = await axios.post(`http://localhost:7000/user/${user._id}/addProfileImage`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -172,14 +172,14 @@ function Navbar() {
 
                 </div>
                 :
-                <i onClick={() => setIsLoginOpen(!isLoginOpen)} className={item.navIcons[0]}></i>
+                <i onClick={() => setIsLoginOpen(!isLoginOpen)} className={item.navIcons[1]}></i>
             }
-            <i onClick={() => navigate('/wishlist')} className={item.navIcons[1]}>
+            <i onClick={() => navigate('/wishlist')} className={item.navIcons[2]}>
               <div className={user && "cartMessage"}>
                 {user && wishlistArr.length}
               </div>
             </i>
-            <i onClick={() => dispatch(openBasket(!basketOpen))} className={item.navIcons[2]}>
+            <i onClick={() => dispatch(openBasket(!basketOpen))} className={item.navIcons[0]}>
               <div className={user && "cartMessage"}>
                 {user && basketArr.length}
               </div>

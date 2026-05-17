@@ -26,7 +26,7 @@ function MobileNavbar({ setisNavOpen, isNavOpen, setIsLoginOpen }) {
             formData.append('image', file);
 
             try {
-                const res = await axios.post(`https://top-bike-d358.vercel.app/user/${user._id}/addProfileImage`, formData, {
+                const res = await axios.post(`http://localhost:7000/user/${user._id}/addProfileImage`, formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },

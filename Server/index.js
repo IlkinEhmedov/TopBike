@@ -1,4 +1,4 @@
-    import express, { json } from "express";
+import express, { json } from "express";
 import { connect } from "mongoose";
 import cors from "cors";
 import navbarRouter from "./src/router/homeRouter/navbarRouter.js";
@@ -60,8 +60,10 @@ app.post("/payment", async (req, res) => {
 });
 
 connect(
-    "mongodb+srv://topBike:topbike123@cluster0.ghwwmer.mongodb.net/"
-).catch((error) => console.log("db not connect" + error));
+    "mongodb+srv://ilkin:ilkin100!@cluster0.3pveowx.mongodb.net/"
+)
+    .then(() => console.log("db connect"))
+    .catch((error) => console.log("db not connect" + error));
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
